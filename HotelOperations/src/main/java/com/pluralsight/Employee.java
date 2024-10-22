@@ -84,3 +84,19 @@ public class Employee {
     }
 
 }
+
+//Explanation:
+
+//Attributes:
+//employeeId: Unique identifier for each employee.
+//employeeName: The employee’s name.
+//department: The department where the employee works.
+//payRate: The hourly rate of pay.
+//hoursWorked: Total hours worked by the employee.
+//Constructor: Initializes the attributes when you create a new Employee object.
+
+//Getters and Setters: Allow you to get and set the values of the attributes.
+//
+//Derived Getters: getTotalPay(): Calculates total pay as payRate multiplied by hoursWorked.
+//getRegularHours(): Returns the hours worked up to a maximum of 40 hours (regular hours).
+//getOvertimeHours(): Returns the hours worked beyond 40 hours (overtime hours).
