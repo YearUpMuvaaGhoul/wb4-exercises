@@ -10,6 +10,7 @@ public class Reservation {
 
 
     public Reservation(String roomType, int numberOfNights, boolean weekend) {
+  //declaring methods and variables
         this.roomType = roomType;
         this.numberOfNights = numberOfNights;
         this.weekend = weekend;
@@ -34,10 +35,10 @@ public class Reservation {
             price = 124.0;
         }
         else{
-
+        // in case there is no option- instead of putting '0'
             throw new Exception ("INVALID ROOM TYPE");
         }
-
+        // this adds the option of if a weekend option is selected it adds 10% more (boolean)
         if(this.weekend){
             /// = price + ( price * 0.10); line 42-43 show two other options to display this math of 105 more if weekend
             ///price = price * 1.1;
@@ -67,6 +68,7 @@ public class Reservation {
     public double getReservationTotal() throws Exception {
 
         return this.getPrice() * numberOfNights;
+        //this is final math of every algorithm or breakdown under 'getprice' x inputted num of nights
     }
 
 }
