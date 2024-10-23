@@ -65,6 +65,7 @@ public class Employee {
         } else {
             return 40;
         }
+ // Tertiary alternate code - return (hoursWorked > 40) ? 40 :hoursWorked;
     }
 
     public double getOvertimeHours() {
@@ -73,6 +74,7 @@ public class Employee {
         } else {
             return 0;
         }
+ //Tertiary alternate code - return (hoursWorked > 40) ? hoursWorked -40 : 0 ;
     }
 
     // Calculate Gross Pay (overtime or not, final pay)
