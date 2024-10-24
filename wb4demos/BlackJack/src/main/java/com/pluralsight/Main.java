@@ -6,11 +6,6 @@ public class Main {
         Deck deck = new Deck();
         deck.shuffle();
 
-
-
-
-
-
         System.out.println("Welcome to Blackjack!");
         String player1Name = Console.PromptForString("Player 1, enter your name: ");
 
@@ -19,19 +14,17 @@ public class Main {
 
 
         System.out.println("The dealer hand is:");
-        Card dealerCard1 = deck.deal();
-        Card dealerCard2 = deck.deal();
         Hand dealerHand = new Hand();
-        dealerHand.Deal(dealerCard1);
-        dealerHand.Deal(dealerCard2);
+        dealerHand.Deal(deck.deal());
+        dealerHand.Deal(deck.deal()); //alternate code to below
         dealerHand.DisplayHand();
 
 
         System.out.println(player1Name + "'s hand is:");
-        Card player1Card1 = deck.deal();
-        Card player1Card2 = deck.deal();
-        Hand player1Hand = new Hand();
-        player1Hand.Deal(player1Card1);
+        Card player1Card1 = deck.deal(); // drawing card from the deck and storing in dealerCard1
+        Card player1Card2 = deck.deal(); //" "
+        Hand player1Hand = new Hand(); // creates Hand object
+        player1Hand.Deal(player1Card1); // add dealerCard to dealerHand
         player1Hand.Deal(player1Card2);
         player1Hand.DisplayHand();
 
@@ -42,7 +35,7 @@ public class Main {
             System.out.println("Dealer wins!");
         }
         else{
-            System.out.println(player1Name + "wins!");
+            System.out.println(player1Name + " wins!");
         }
 
     }

@@ -3,7 +3,6 @@ package com.pluralsight;
 public class Card {
     private String suit;
     private String value;
-    private String rank;
     private boolean isFaceUp;
 
 
