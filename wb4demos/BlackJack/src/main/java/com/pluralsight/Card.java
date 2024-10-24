@@ -29,37 +29,69 @@ public class Card {
         }
     }
 
-    public int getPointValue() {
-        if (this.value.equalsIgnoreCase("2")) {
-            return 2;
-        } else if (this.value.equalsIgnoreCase("3")) {
-            return 3;
-        } else if (this.value.equalsIgnoreCase("4")) {
-            return 4;
-        } else if (this.value.equalsIgnoreCase("5")) {
-            return 5;
-        } else if (this.value.equalsIgnoreCase("6")) {
-            return 6;
-        } else if (this.value.equalsIgnoreCase("7")) {
-            return 7;
-        } else if (this.value.equalsIgnoreCase("8")) {
-            return 8;
-        } else if (this.value.equalsIgnoreCase("9")) {
-            return 9;
-        } else if (this.value.equalsIgnoreCase("10")) {
-            return 10;
-        } else if (this.value.equalsIgnoreCase("J")) {
-            return 10;
-        } else if (this.value.equalsIgnoreCase("Q")) {
-            return 10;
-        } else if (this.value.equalsIgnoreCase("K")) {
-            return 10;
-        } else if (this.value.equalsIgnoreCase("A")) {
-            return 11;
+    public int getPointValue() throws Exception {
+        //only return the value if the card is face up
+        //A is 11
+        //K, Q, J is 10
+        if (isFaceUp) {
+            if (this.value.equalsIgnoreCase("2")) {
+                return 2;
+            }
+            else if (this.value.equalsIgnoreCase("3")) {
+                return 3;
+            }
+            else if (this.value.equalsIgnoreCase("4")) {
+                return 4;
+            }
+            else if (this.value.equalsIgnoreCase("5")) {
+                return 5;
+            }
+            else if (this.value.equalsIgnoreCase("6")) {
+                return 6;
+            }
+            else if (this.value.equalsIgnoreCase("7")) {
+                return 7;
+            }
+            else if (this.value.equalsIgnoreCase("8")) {
+                return 8;
+            }
+            else if (this.value.equalsIgnoreCase("9")) {
+                return 9;
+            }
+            else if (this.value.equalsIgnoreCase("10")) {
+                return 10;
+            }
+            else if (this.value.equalsIgnoreCase("J")) {
+                return 10;
+            }
+            else if (this.value.equalsIgnoreCase("Q")) {
+                return 10;
+            }
+            else if (this.value.equalsIgnoreCase("K")) {
+                return 10;
+            }
+            else if (this.value.equalsIgnoreCase("A")) {
+                return 11;
+            }
+            else {
+                throw new Exception("Invalid Card Value");
+
+            }
         }
-        
+        else{
+            throw new Exception("Can't get the value of a face down card");
+        }
+
+            //we want to return the value of the card
+
     }
-}
 
+    public boolean isFaceUp () {
+        return this.isFaceUp;
+    }
 
+    public void flip (){
+        isFaceUp = !isFaceUp;
+    }
 
+    }
