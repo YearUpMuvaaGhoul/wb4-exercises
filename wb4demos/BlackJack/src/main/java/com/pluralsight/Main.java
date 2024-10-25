@@ -1,12 +1,19 @@
 package com.pluralsight;
 
 public class Main {
+
+    private static BlackJackGame game = new BlackJackGame();
+
+
     public static void main(String[] args) throws Exception {
 
         Deck deck = new Deck();
         deck.shuffle();
 
         System.out.println("Welcome to Blackjack!");
+
+        Object console;
+       int numberOfPlayers = Console.PromptForInt("How many players (not including the dealer):");
         String player1Name = Console.PromptForString("Player 1, enter your name: ");
 
         System.out.println("Dealing cards... 2 cards to each player!");
@@ -37,6 +44,15 @@ public class Main {
         else{
             System.out.println(player1Name + " wins!");
         }
+
+    }
+
+    public static void AddPlayersToGame(int numberOfPlayers){
+        for(int i = 0 ; i <numberOfPlayers ; i++){
+            String playerName = Console.PromptForString("Please enter the name of the player " + i +": ");
+            game.AddPlayer(playerName);
+        }
+
 
     }
 }
